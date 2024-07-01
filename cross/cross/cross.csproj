@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{AF00BFC7-8BBD-4946-AF75-AC1D57C5559B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>cross</RootNamespace>
+    <AssemblyName>cross</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="gtk-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="gdk-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="glib-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+      <Package>glib-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="glade-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+      <Package>glade-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="pango-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="atk-sharp, Version=2.4.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <SpecificVersion>False</SpecificVersion>
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="Mono.Posix">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Project\NativeCode\GTK\GTK_Need\gui.stetic">
+      <LogicalName>gui.stetic</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Project\NativeCode\GTK\GTK_Need\generated.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Project\Framework\ApplicationController.cs" />
+    <Compile Include="Project\Framework\ViewMain\IViewMain.cs" />
+    <Compile Include="Project\Framework\ViewPage1\INavigationNode_Page1.cs" />
+    <Compile Include="Project\Framework\ViewPage2\INavigationNode_Page2.cs" />
+    <Compile Include="Project\Framework\ViewPage3\INavigationNode_Page3.cs" />
+    <Compile Include="Project\Framework\ViewStart\INavigationNode_Start.cs" />
+    <Compile Include="Project\Framework\ViewStart\IViewStart.cs" />
+    <Compile Include="Project\Infrastructure\IContainer.cs" />
+    <Compile Include="Project\Infrastructure\IGLApplication.cs" />
+    <Compile Include="Project\Infrastructure\IWindow.cs" />
+    <Compile Include="Project\NativeCode\GTK\ViewStart\Project.Framework.ViewStart.WindowStart.cs" />
+    <Compile Include="Project\NativeCode\GTK\ViewMain\Project.Framework.ViewMain.WindowMain.cs" />
+    <Compile Include="Project\NativeCode\GTK\ViewPage1\Project.Framework.ViewPage1.WidgetPage1.cs" />
+    <Compile Include="Project\NativeCode\GTK\ViewPage2\Project.Framework.ViewPage2.WidgetPage2.cs" />
+    <Compile Include="Project\NativeCode\GTK\ViewPage3\Project.Framework.ViewPage3.WidgetPage3.cs" />
+    <Compile Include="Project\NativeCode\WinForms\Infrastructure\ApplicationWinForm.cs" />
+    <Compile Include="Project\NativeCode\WinForms\ViewMain\FormMain.cs" />
+    <Compile Include="Project\NativeCode\WinForms\ViewMain\FormMain.Designer.cs" />
+    <Compile Include="Project\NativeCode\WinForms\ViewPage1\Control1.cs" />
+    <Compile Include="Project\NativeCode\WinForms\ViewPage1\Control1.Designer.cs" />
+    <Compile Include="Project\NativeCode\WinForms\ViewPage2\Control2.cs" />
+    <Compile Include="Project\NativeCode\WinForms\ViewPage2\Control2.Designer.cs" />
+    <Compile Include="Project\NativeCode\WinForms\ViewPage3\Control3.cs" />
+    <Compile Include="Project\NativeCode\WinForms\ViewPage3\Control3.Designer.cs" />
+    <Compile Include="Project\NativeCode\WinForms\ViewStart\FormStart.cs" />
+    <Compile Include="Project\NativeCode\WinForms\ViewStart\FormStart.Designer.cs" />
+    <Compile Include="Project\NativeCode\GTK\ViewMain\WindowMain.cs" />
+    <Compile Include="Project\NativeCode\GTK\ViewStart\WindowStart.cs" />
+    <Compile Include="Project\NativeCode\GTK\Infrastructure\ApplicationGTK.cs" />
+    <Compile Include="Project\NativeCode\GTK\ViewPage1\WidgetPage1.cs" />
+    <Compile Include="Project\NativeCode\GTK\ViewPage2\WidgetPage2.cs" />
+    <Compile Include="Project\NativeCode\GTK\ViewPage3\WidgetPage3.cs" />
+    <Compile Include="Project\Framework\IFactoryGUI.cs" />
+    <Compile Include="Project\NativeCode\GTK\FactoryGUI_GTK.cs" />
+    <Compile Include="Project\NativeCode\WinForms\FactoryGUI_WinForms.cs" />
+    <Compile Include="Project\Framework\Program.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="Project\NativeCode\WinForms\ViewMain\FormMain.resx" />
+    <None Include="Project\NativeCode\WinForms\ViewPage1\Control1.resx" />
+    <None Include="Project\NativeCode\WinForms\ViewPage2\Control2.resx" />
+    <None Include="Project\NativeCode\WinForms\ViewPage3\Control3.resx" />
+    <None Include="Project\NativeCode\WinForms\ViewStart\FormStart.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Project\NativeCode\" />
+    <Folder Include="Project\NativeCode\WinForms\" />
+    <Folder Include="Project\NativeCode\GTK\" />
+    <Folder Include="Project\NativeCode\WinForms\ViewMain\" />
+    <Folder Include="Project\NativeCode\WinForms\ViewPage1\" />
+    <Folder Include="Project\NativeCode\WinForms\ViewPage2\" />
+    <Folder Include="Project\NativeCode\WinForms\ViewPage3\" />
+    <Folder Include="Project\NativeCode\WinForms\ViewStart\" />
+    <Folder Include="Project\NativeCode\WinForms\Infrastructure\" />
+    <Folder Include="Project\NativeCode\GTK\ViewMain\" />
+    <Folder Include="Project\NativeCode\GTK\ViewStart\" />
+    <Folder Include="Project\NativeCode\GTK\ViewPage1\" />
+    <Folder Include="Project\NativeCode\GTK\ViewPage2\" />
+    <Folder Include="Project\NativeCode\GTK\ViewPage3\" />
+    <Folder Include="Project\NativeCode\GTK\Infrastructure\" />
+    <Folder Include="Project\NativeCode\GTK\GTK_Need\" />
+  </ItemGroup>
+</Project>
